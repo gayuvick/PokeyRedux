@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans");
+#root {
+  width:100%;
+  padding: 2px !important;
+   background-image: url("./assets/backGround.jpg");
+   
+  
+  background-size:contain;
+ 
+}
+
+
+.card{
+  
+  /* background-color: transparent; */
+  background-color: rgba(255, 255, 255, 0.014);
+  backdrop-filter: blur(1px);
+  height:330px; 
+  border-radius: 17px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform .6s;
+  /* filter: drop-shadow(0 0 2em #646cffaa); */
+  transform-style: preserve-3d;
+ 
+  
+}
+
+.card:hover .card-inner {
+  cursor: pointer;
+  
+  transform: rotateY(180deg);
+ 
+}
+
+.card-front, .card-back {
+ 
+
+  position: absolute; 
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-front { 
+  
+  border: 1.5px ridge rgb(80, 76, 107);
+  border-radius: 17px;
+ 
+  
+}
+.card-body h5{
+  font-family: Pixelify Sans;
+  color:rgb(61, 2, 2);
+  box-shadow: 2px 2px 3px black;
+}
+  
+
+
+.card-back {
+  background-color: white;
+  /* background-image: url('assets/poke.jpg') !important; */
+  transform: rotateY(180deg);
+  /* height: 300px; */
+  
+}
+.pokeImage{
+  width:100%;
+  height: 100%;
+
+}
+
+ .card:hover{
+  box-shadow : 0 5px 20px rgb(156, 187, 228);
+  border:  5px ;
+  border-color: rgb(101, 159, 236);
+  
+
+}
+
+
+.container-info {
+  /* border-radius: 3rem; */
+  background-color: rgba(255, 255, 255, 0.089); 
+  backdrop-filter: blur(2px);
+
+  padding: 14px 10px;
+  overflow: hidden;
+  border: 1rem solid ;
+  border-color: rgba(255, 255, 255, 0.311);
+
+}
+
+.breakLine{
+  
+  border: 0.3px solid rgb(126, 123, 123);
+  width: 100%;
+}
+
+.pokeName{
+  color:brown;
+  padding: 0.5rem;
+  font-family: Pixelify Sans;
+  /* box-shadow: 5px 4px 20px rgba(50, 50, 93, 0.25) , 5px 4px 20px rgba(50, 50, 93, 0.25); */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.mainPDPDiv{
+
+  background-color: rgb(255 255 255 / 0.3);
+  backdrop-filter: blur(10px);
+
+}
+
+
+
+.abilitiesInfo {
+  border-radius: 20px 40px 2px;
+  padding: 1rem;
+  /* text-align: center; */
+  /* background-color: rgb(255 255 255 / 0.3);  */
+  /* backdrop-filter: blur(10px); */
+  /* width: 100%; */
+  /* margin-bottom: 30px; */
+  /* margin-left: 4rem;
+  margin-right:4rem; */
+  font-family: Pixelify Sans;
+  color:rgb(63, 77, 153);
+  /* box-shadow : 1px 3px 10px rgb(198, 162, 149); */
+ 
+  display:flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width:100% !important;
+  flex-direction: column;
+  
+}
+
+
+.abilitiesInfo h4 {
+  text-align: center;
+ 
+ width:100%;
+ justify-content: flex-start;
+ align-items: flex-start;
+
+  /* font-size: 14px; */
+  /* margin-bottom: px; */
+  /* letter-spacing: 4px; */
+  
+  /* font-family: "OldSansBlack"; */
+}
+
+.abilitiesInfo p {
+ text-align: center;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  width:100%;
+/* font-size: 16px; */
+  
+  /* font-family: "OldSansBlack"; */
+}
+
+
+.objectCover{
+  position: absolute;
+   height: 100%; 
+   width: 100%; 
+   inset: 0px;
+    color: transparent;
+}
+
+
+
+.card-groups{
+  background-color: rgb(255 255 255 / 0.3); 
+  backdrop-filter: blur(10px);
+  padding: 1.2rem;
+}
+
+@media screen and (max-width: 575px) {
+  .card-img-top{
+   
+    
+  }
+  .card {
+    
+    margin: 4rem;
+   
+  }}
+
+.pokeDetails{
+  margin:5rem;
+}
+.mainDiv{
+  background-color: rgba(165, 116, 162, 0.3); 
+ backdrop-filter: blur(2px); 
+
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.backButton{
+  background-color: rgb(255 255 255 / 0.3); 
+  color:blueviolet;
+  font-family: Pixelify Sans;
+}
+
+.backButton:hover{
+  box-shadow : 0 5px 20px rgb(156, 187, 228);
+  border:  5px ;
+  border-color: rgb(101, 159, 236);
+}
+.upDownAnimation{
+  /* box-shadow: 3px 4px 20px black; */
+  border-radius: 40%;
+ 
+  width:100%;
+  margin: 2rem;
+ 
+    -webkit-filter: drop-shadow(0px 16px 10px rgba(192, 111, 76, 0.6));
+    -moz-filter: drop-shadow(0px 16px 10px rgba(192, 111, 76, 0.6));
+    -ms-filter: drop-shadow(0px 16px 10px rgba(192, 111, 76, 0.6)); 
+    -o-filter: drop-shadow(0px 16px 10px rgba(192, 111, 76, 0.6));
+     filter: drop-shadow(0px 16px 10px rgba(192, 111, 76, 0.6)); 
+
+  animation: upDownAnimation 2s infinite;
+}
+
+@keyframes upDownAnimation {
+  0%, 100% {
+    transform: translateY(0); /* Start and end position */
+  }
+  50% {
+    transform: translateY(-20px); /* Midway position - move up by 20 pixels */
+  }
+}
+
