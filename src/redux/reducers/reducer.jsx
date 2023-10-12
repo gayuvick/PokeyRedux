@@ -1,41 +1,55 @@
-
+import { createReducer } from "@reduxjs/toolkit";
 const initialState = {
     posts:[],
     isLoading:true,
     error:'',
-    load:true,
     fullInfo:[],
 
 }
-
-const reducer = (state = initialState  ,  action) => {
-    switch (action.type) {
+const reducerWithCreate = createReducer(initialState, (builder) => {
+    builder
+      .addCase('initialPageLoad', (state, action) => {
+        state.posts =  action.posts
+        state.isLoading =action.isLoading
         
-        case 'initialPageLoad':
+      })
+      .addCase('descriptionPageLoad', (state, action) => {
+        state.load = action.load
+        state.fullInfo = action.fullInfo
+      })
+      
+  })
+
+
+
+// const reducer = (state = initialState  ,  action) => {
+//     switch (action.type) {
+        
+//         case 'initialPageLoad':
            
-            return ({
-                ...state,
-                posts: action.posts,
-                isLoading:action.isLoading,
-                fullInfo:action.fullInfo,
+//             return ({
+//                 ...state,
+//                 posts: action.posts,
+//                 isLoading:action.isLoading,
+//                 fullInfo:action.fullInfo,
                             
-            }
+//             }
 
-            )
+//             )
 
-        case 'descriptionPageLoad':
+//         case 'descriptionPageLoad':
             
-            return{
-                ...state,
-                load:action.load,
-                fullInfo:action.fullInfo,
+//             return{
+//                 ...state,
+//                 load:action.load,
+//                 fullInfo:action.fullInfo,
 
-            }
+//             }
 
         
-        default:
-            return state;
-    }
-};
+//         default:
+//             return state;
+//     }
+// };
  
-export { reducer };
+export { reducerWithCreate };

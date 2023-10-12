@@ -1,15 +1,18 @@
 import {configureStore} from "@reduxjs/toolkit";
 import storage from 'redux-persist/lib/storage/session';
-// import storageSession from 'reduxjs-toolkit-persist/lib/storage/session'
 import { persistReducer, persistStore } from 'redux-persist';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from '../sagas';
+import { reducerWithCreate } from "./reducers/reducer";
 const persistConfig = {
-    key: 'root',
-    storage,
-  }
-import { reducer } from "./reducers/reducer";
-const persistedReducer = persistReducer(persistConfig, reducer)
-const appStore = configureStore({reducer:persistedReducer , middleware:[thunk]}); 
-export default appStore;
+  key: 'root',
+  storage,
+}
 
+const sagaMiddleWare = createSagaMiddleware();
+const persistedReducer = persistReducer(persistConfig, reducerWithCreate)
+const appStore = configureStore({reducer:persistedReducer , middleware:[sagaMiddleWare]});
+sagaMiddleWare.run(rootSaga); 
+
+export default appStore;
 export const persistor = persistStore(appStore);

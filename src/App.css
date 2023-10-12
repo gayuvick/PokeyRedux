@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans");
 #root {
   width:100%;
+  height:100%;
   padding: 2px !important;
    background-image: url("./assets/backGround.jpg");
    
@@ -9,7 +10,12 @@
  
 }
 
-
+.loader{
+  height:100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .card{
   
   /* background-color: transparent; */
@@ -112,6 +118,7 @@
 
   background-color: rgb(255 255 255 / 0.3);
   backdrop-filter: blur(10px);
+  height:100%;
 
 }
 
@@ -120,17 +127,9 @@
 .abilitiesInfo {
   border-radius: 20px 40px 2px;
   padding: 1rem;
-  /* text-align: center; */
-  /* background-color: rgb(255 255 255 / 0.3);  */
-  /* backdrop-filter: blur(10px); */
-  /* width: 100%; */
-  /* margin-bottom: 30px; */
-  /* margin-left: 4rem;
-  margin-right:4rem; */
+
   font-family: Pixelify Sans;
   color:rgb(63, 77, 153);
-  /* box-shadow : 1px 3px 10px rgb(198, 162, 149); */
- 
   display:flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -202,6 +201,7 @@
 .mainDiv{
   background-color: rgba(165, 116, 162, 0.3); 
  backdrop-filter: blur(2px); 
+ height:100%;
 
 }
 .button{
@@ -223,7 +223,7 @@
 }
 .upDownAnimation{
   /* box-shadow: 3px 4px 20px black; */
-  border-radius: 40%;
+  
  
   width:100%;
   margin: 2rem;
