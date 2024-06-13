@@ -2,7 +2,7 @@ var module;
 module.exports= {
   ci: {
     collect: {
-      numberOfRuns: 1,
+      numberOfRuns: 5,
       startServerCommand: 'npm run dev',
       staticDistDir: './dist', 
       settings: {
