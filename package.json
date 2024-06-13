@@ -2,12 +2,14 @@
   "name": "pokemonapp",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky",
+    "lighthouse": "lhci autorun",
+    "start": "http-server -p 5500"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -21,7 +23,10 @@
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.2.3",
     "redux-thunk": "^2.4.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "globals": "^15.4.0",
+    "husky": "^9.0.11",
+    "@lhci/cli": "^0.7.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
