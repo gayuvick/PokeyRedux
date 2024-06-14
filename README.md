@@ -10,4 +10,3 @@ Currently, two official plugins are available:
 #Live Demo
 
 [Live Demo](https://pokey-dokey-app-c8h6.vercel.app/)
-<!--  -->
