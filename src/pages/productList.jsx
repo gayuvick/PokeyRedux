@@ -3,7 +3,7 @@ import { useSelector , useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 import pokeCard from "../assets/poke.jpg"
 
-
+// 
 export default function ProductList(){  
   
   const dispatch =  useDispatch();
