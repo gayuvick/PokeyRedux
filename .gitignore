@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .lighthouseci/
+axe-results.txt
 
 # Editor directories and files
 .vscode/*
