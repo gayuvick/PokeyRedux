@@ -1,0 +1,37 @@
+!/usr/bin/env sh
+# Run linting
+npm run lint
+lintExitCode=$?
+if [ $lintExitCode -ne 0 ]; then
+  echo "Linting failed. Commit aborted."
+  exit $lintExitCode
+fi
+
+# Run axe-cli
+axe  http://localhost:5173/ > axe-results.txt
+axeExitCode=$?
+
+
+if grep -q 'Accessibility issues detected.' axe-results.txt; then
+    cat axe-results.txt 
+    echo "Accessibility tests failed. Aborting the commit..."
+    exit 1
+else
+    echo "Accessibility tests passed. Proceeding with the commit..."
+fi
+
+# Run build
+npm run build
+buildExitCode=$?
+
+
+if [ $buildExitCode -ne 0 ]; then
+  echo "Build failed. Commit aborted."
+  exit $buildExitCode
+fi
+
+# Run Lighthouse CI
+lhci autorun
+lhciExitCode=$?
+
+exit $lhciExitCode
