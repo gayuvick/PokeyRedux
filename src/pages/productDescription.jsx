@@ -91,7 +91,8 @@ let imgSource1 = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'+imgN
       
 <div className= "slicky-slide">
     <img className = "upDownAnimation" src = {imgSource1}/>
-    {/* commiting without alt tag */}
+   
+   {/* trying to commit without alt tag here */}
     <div className= 'button'>
  <button className = "backButton" onClick = {movePrevious}>Go Back</button>
 </div>
